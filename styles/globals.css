@@ -1,0 +1,116 @@
+@import '../styles/global-animations.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --background-primary: #ffffff;
+  --background-secondary: #f0f0f0;
+  --border-radius: 0.5rem;
+}
+
+.dark {
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --background-primary: #1a1a1a;
+  --background-secondary: #2a2a2a;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Global rounded corners */
+.rounded-lg, 
+.rounded-md,
+.rounded-full,
+button,
+input,
+select,
+.card {
+  border-radius: var(--border-radius) !important;
+}
+
+.chinese-new-year-theme {
+  background-color: var(--theme-background, #FF0000);
+}
+
+.chinese-new-year-theme .theme-text {
+  color: #FFFFFF;
+}
+
+.chinese-new-year-theme button {
+  background-color: var(--theme-button, #FFD700);
+  color: #000000;
+}
+
+/* Form elements */
+input, textarea, select {
+  color: var(--text-primary);
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  border: 1px solid var(--text-secondary);
+}
+
+button {
+  color: var(--text-primary);
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--text-secondary);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Accessibility improvements */
+/* Remove default focus outline */
+:focus {
+  outline: none;
+}
+
+/* Add custom focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #4299e1;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
